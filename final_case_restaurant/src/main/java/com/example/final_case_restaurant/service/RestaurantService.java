@@ -13,7 +13,11 @@ public interface RestaurantService {
     List<RestaurantDto> getAllRestaurant();
 
     RestaurantDto createRestaurant(RestaurantDto restaurantDto);
+    RestaurantDto deleteRestaurant(int id);
+    RestaurantDto updateRestaurant(int id, RestaurantDto restaurant);
 
     RestaurantDto getFindByIdRestaurant(int id);
+
+
 
 }

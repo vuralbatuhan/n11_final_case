@@ -36,6 +36,17 @@ public class RestaurantController {
         return restaurantService.createRestaurant(restaurant);
     }
 
+    @DeleteMapping("/delete/{id}")
+    public RestaurantDto deleteRestaurant(@PathVariable int id) {
+        LoggerHandler.getLogger().log(Level.INFO,
+                "RestaurantController --> deleteRestaurant() --> Restaurant id has been sent to RestaurantService deleteRestaurant()");
+        return restaurantService.deleteRestaurant(id);
+    }
+    @PutMapping("/update/{id}")
+    public RestaurantDto updateRestaurant(@PathVariable int id, @RequestBody RestaurantDto restaurant) {
+        return restaurantService.updateRestaurant(id, restaurant);
+    }
+
     @GetMapping("{id}/restaurants")
     public SendRestaurantDto getFindByIdRestaurant(@PathVariable int id){
         try{
